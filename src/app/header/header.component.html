@@ -4,3 +4,10 @@
 <br>
 Input your text here:<input [(ngModel)]="paraContent">
 <p>{{paraContent}}</p>
+<br>
+<br>
+<br>
+
+<ul *ngFor="let user of users, let i= index">
+    <li>{{ user.name }} is in Index {{i}}</li>
+</ul>
