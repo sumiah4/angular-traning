@@ -13,12 +13,12 @@
 <br>
 <br>
 <div>
-    <select [(ngModel)]="role">
-        <option value="">Select a Role</option>
-        <option value="admin">Admin</option>
+    <select [(ngModel)]="role" >
+        <option *ngFor="let roleList of roleLists" value="{{roleList}}">{{roleList == '' ? 'Select a role' : roleList}}</option>
+        <!-- <option value="admin">Admin</option>
         <option value="manager">Manager</option>
         <option value="lead">Lead</option>
-        <option value="employee">Employee</option>
+        <option value="employee">Employee</option> -->
     </select>
 <br>
 <br>
