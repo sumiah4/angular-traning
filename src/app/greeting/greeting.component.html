@@ -1,2 +1,11 @@
 <button (click)="buttonClicked()">{{ btnClicked ? 'Hide': 'Show'}}</button>
 <p *ngIf="btnClicked">You can find me now.</p>
+<br>
+<br>
+<br>
+<div *ngFor="let category of categories">
+    <p>{{category.name}}</p>
+        <ul *ngFor="let item of category.items">
+            <li>{{ item }}</li>
+        </ul>
+</div>

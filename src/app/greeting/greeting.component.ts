@@ -15,4 +15,9 @@ export class GreetingComponent {
     this.btnClicked = !this.btnClicked;
   }
 
+  categories = [
+    { name: 'Fruits', items: ['Apple', 'Banana', 'Orange'] },
+    { name: 'Vegetables', items: ['Carrot', 'Broccoli', 'Spinach'] }
+  ];
+
 }
