@@ -9,3 +9,34 @@
             <li>{{ item }}</li>
         </ul>
 </div>
+<br>
+<br>
+<br>
+<div>
+    <select [(ngModel)]="role">
+        <option value="">Select a Role</option>
+        <option value="admin">Admin</option>
+        <option value="manager">Manager</option>
+        <option value="lead">Lead</option>
+        <option value="employee">Employee</option>
+    </select>
+<br>
+<br>
+    <div [ngSwitch]="role">
+        <div *ngSwitchCase="'admin'">
+            This is admin.
+        </div>
+        <div *ngSwitchCase="'manager'">
+            This is Manager.
+        </div>
+        <div *ngSwitchCase="'lead'">
+            This is Lead.
+        </div>
+        <div *ngSwitchCase="'employee'">
+            This is Employee
+        </div>
+        <div *ngSwitchDefault>
+            Nothing selected
+        </div>
+    </div>
+</div>

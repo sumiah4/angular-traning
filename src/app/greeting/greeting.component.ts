@@ -20,4 +20,7 @@ export class GreetingComponent {
     { name: 'Vegetables', items: ['Carrot', 'Broccoli', 'Spinach'] }
   ];
 
+  //roleList:string[] = ['admin', 'manager', 'lead', 'employee'];
+  role:string = '';
+
 }
