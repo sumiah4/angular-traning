@@ -11,6 +11,7 @@ export class ProductListComponent {
 
   id:number  = 0;
   details:any = '';
+  message:string = '';
 
   products = [
     {
@@ -61,8 +62,13 @@ export class ProductListComponent {
 ];
 
 idSelected(id:number) {
+  this.message = '';
   this.id = id;
   this.details = this.products.find(product => product.id === id);
+}
+
+productAdded(){
+  this.message = 'The product is Added';
 }
 
 

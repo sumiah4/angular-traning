@@ -3,4 +3,5 @@
    
     <br>
 </div>
-<app-product-details [ngStyle]="{'display':id === 0? 'none' : 'block'}" [product]="details"></app-product-details>
+<app-product-details [ngStyle]="{'display':id === 0? 'none' : 'block'}" [product]="details" (productAdded)="productAdded()"></app-product-details>
+<div>{{message ? message : ''}}</div>
