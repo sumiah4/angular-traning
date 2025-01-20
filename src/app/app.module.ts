@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { GreetingComponent } from './greeting/greeting.component';
 import { NgclasstrialComponent } from './ngclasstrial/ngclasstrial.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductDetailsComponent } from './product-list/product-details/product-details.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { NgclasstrialComponent } from './ngclasstrial/ngclasstrial.component';
     AppComponent,
     HeaderComponent,
     GreetingComponent,
-    NgclasstrialComponent
+    NgclasstrialComponent,
+    ProductListComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

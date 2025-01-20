@@ -1,0 +1,6 @@
+<div *ngFor="let prod of products">
+   <a  (click)="idSelected(prod.id)">Name: {{prod.name}}</a>
+   
+    <br>
+</div>
+<app-product-details [ngStyle]="{'display':id === 0? 'none' : 'block'}" [product]="details"></app-product-details>
