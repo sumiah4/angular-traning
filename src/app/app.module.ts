@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { GreetingComponent } from './greeting/greeting.component';
+import { NgclasstrialComponent } from './ngclasstrial/ngclasstrial.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    GreetingComponent
+    GreetingComponent,
+    NgclasstrialComponent
   ],
   imports: [
     BrowserModule,
