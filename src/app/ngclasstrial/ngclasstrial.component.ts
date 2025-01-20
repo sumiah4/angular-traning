@@ -9,10 +9,11 @@ import { Component } from '@angular/core';
 })
 export class NgclasstrialComponent {
 
-  changePara:string = 'red';
+  changePara:boolean = false;
 
   onButtonClick(event: any) {
-    this.changePara = event.target.value;
+    this.changePara = event.target.value === 'true';
+    console.log(typeof this.changePara);
   }
 
 
