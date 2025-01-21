@@ -9,6 +9,7 @@ import { GreetingComponent } from './greeting/greeting.component';
 import { NgclasstrialComponent } from './ngclasstrial/ngclasstrial.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-list/product-details/product-details.component';
+import { TemReferenceComponent } from './tem-reference/tem-reference.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProductDetailsComponent } from './product-list/product-details/product-
     GreetingComponent,
     NgclasstrialComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    TemReferenceComponent
   ],
   imports: [
     BrowserModule,
