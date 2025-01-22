@@ -10,6 +10,7 @@ import { NgclasstrialComponent } from './ngclasstrial/ngclasstrial.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-list/product-details/product-details.component';
 import { TemReferenceComponent } from './tem-reference/tem-reference.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TemReferenceComponent } from './tem-reference/tem-reference.component';
     NgclasstrialComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    TemReferenceComponent
+    TemReferenceComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

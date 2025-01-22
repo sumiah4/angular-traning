@@ -3,10 +3,17 @@
 
 <!-- <app-greeting></app-greeting>
 <app-ngclasstrial></app-ngclasstrial> -->
+<!-- <br>
 <br>
 <br>
-<br>
-<app-product-list></app-product-list>
+<app-product-list></app-product-list> -->
 <br>
 <br>
 <app-tem-reference></app-tem-reference>
+<br>
+<br>
+<div>
+    <app-user-profile [userId]="userId"></app-user-profile>
+    <button value=1 (click)="setUserId($event)">User1</button>
+    <button value=2 (click)="setUserId($event)">User2</button>
+</div>
