@@ -12,10 +12,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-demo';
-  userId:number = 0;
+  userId:number = 1;
 
   setUserId(event:any) {
     this.userId = event.target.value;
-    console.log(this.userId);
+    //console.log(this.userId);
   }
 }
