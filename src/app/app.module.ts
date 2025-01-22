@@ -11,6 +11,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-list/product-details/product-details.component';
 import { TemReferenceComponent } from './tem-reference/tem-reference.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HighlighterDirective } from './customDirective/highlighter.directive';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ProductListComponent,
     ProductDetailsComponent,
     TemReferenceComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    HighlighterDirective
   ],
   imports: [
     BrowserModule,
