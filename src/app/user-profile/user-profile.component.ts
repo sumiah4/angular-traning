@@ -24,6 +24,10 @@ export class UserProfileComponent {
     }
   }
 
+  ngOnInit() {
+    this.fetchData(1);
+  }
+
   fetchData(userId:number){
     this.userDetails = this.userDatas.find(userData => userData.id == userId) || null;
   }
