@@ -12,6 +12,9 @@ import { ProductDetailsComponent } from './product-list/product-details/product-
 import { TemReferenceComponent } from './tem-reference/tem-reference.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HighlighterDirective } from './customDirective/highlighter.directive';
+import { DirectiveServiceComponent } from './directive-service/directive-service.component';
+import { HighlightDirective } from './customDirective/highlight.directive';
+import { ToggleServiceService } from './customServices/toggle-service.service';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { HighlighterDirective } from './customDirective/highlighter.directive';
     ProductDetailsComponent,
     TemReferenceComponent,
     UserProfileComponent,
-    HighlighterDirective
+    HighlighterDirective,
+    DirectiveServiceComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import { HighlighterDirective } from './customDirective/highlighter.directive';
     FormsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    ToggleServiceService
   ],
   bootstrap: [AppComponent]
 })
