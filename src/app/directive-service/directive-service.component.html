@@ -13,3 +13,10 @@
     <li *ngFor="let items of itemService.items">{{items}}
     </li>
 </ul>
+
+=====================================
+
+<button (click)="getCounter()">Get counter using Obeserver</button>
+<div>
+    <div *ngFor="let counter of counters">{{counter}}</div>
+</div>

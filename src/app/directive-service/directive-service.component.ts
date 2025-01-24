@@ -1,6 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { ToogleService } from '../customServices/toogle.service';
 import { ItemService } from '../customDirective/item.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-directive-service',
@@ -17,6 +18,7 @@ export class DirectiveServiceComponent {
 
   toggleStatuss:boolean = false;
   itemAdded:string = '';
+  counters:any[] = [];
 
   setToggleStatus(){
     this.toggleService.setToggleStatus();
@@ -29,6 +31,34 @@ export class DirectiveServiceComponent {
       this.itemAdded = '';
       items.focus();
     }
+  }
+  
+  myObservable = new Observable((observer) => {
+    let i = 1;
+
+  const intervalId = setInterval(() => {
+    if (i <= 10) {
+      observer.next(i);
+      i++;
+    } 
+    else {
+      observer.complete();
+    }
+  }, 1000);
+    
+  });
+
+  getCounter() {
+    this.myObservable.subscribe((val:any)=>{
+      console.log(val);
+      this.counters.push(val);
+    },
+    (err) =>{
+      alert(err.message);
+    },
+    () => {
+      alert('Observable completed');
+    });
   }
 
 }
