@@ -1,7 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { ToogleService } from '../customServices/toogle.service';
 import { ItemService } from '../customDirective/item.service';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 
 @Component({
   selector: 'app-directive-service',
@@ -32,21 +32,23 @@ export class DirectiveServiceComponent {
       items.focus();
     }
   }
+  countervalues:number[] = [2,3,4,5];
+  myObservable = from(this.countervalues);
   
-  myObservable = new Observable((observer) => {
-    let i = 1;
+  // myObservable = new Observable((observer) => {
+  //   let i = 1;
 
-  const intervalId = setInterval(() => {
-    if (i <= 10) {
-      observer.next(i);
-      i++;
-    } 
-    else {
-      observer.complete();
-    }
-  }, 1000);
+  // const intervalId = setInterval(() => {
+  //   if (i <= 10) {
+  //     observer.next(i);
+  //     i++;
+  //   } 
+  //   else {
+  //     observer.complete();
+  //   }
+  // }, 1000);
     
-  });
+  // });
 
   getCounter() {
     this.myObservable.subscribe((val:any)=>{
