@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ToggleServiceService } from '../customServices/toggle-service.service';
+//import { ToggleServiceService } from '../customServices/toggle.service';
+import { ToogleService } from '../customServices/toogle.service';
 
 @Component({
   selector: 'app-directive-service',
@@ -10,7 +11,7 @@ import { ToggleServiceService } from '../customServices/toggle-service.service';
 })
 export class DirectiveServiceComponent {
 
-  constructor(public toggleService: ToggleServiceService){
+  constructor(public toggleService: ToogleService){
 
   }
 

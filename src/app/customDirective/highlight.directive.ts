@@ -6,12 +6,11 @@ import { Directive, ElementRef, Input, Renderer2, OnChanges } from '@angular/cor
 })
 export class HighlightDirective {
 
-  @Input() isHighlight = false;
+  @Input('appHighlight') isHighlight = false;
 
-  constructor(private element:ElementRef, private renderer: Renderer2){alert('doooo');}
+  constructor(private element:ElementRef, private renderer: Renderer2){}
 
   ngOnChanges(): void {
-    alert('jjj');
     const color = this.isHighlight ? 'yellow' : 'gray';
     this.renderer.setStyle(this.element.nativeElement, 'color', color);
   }

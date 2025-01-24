@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ToggleServiceService {
+export class ToogleService {
 
   constructor() { }
 
@@ -11,6 +11,5 @@ export class ToggleServiceService {
 
   setToggleStatus(){
     this.toggleStatus = !this.toggleStatus;
-    alert(this.toggleStatus);
   }
 }

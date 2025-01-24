@@ -14,7 +14,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HighlighterDirective } from './customDirective/highlighter.directive';
 import { DirectiveServiceComponent } from './directive-service/directive-service.component';
 import { HighlightDirective } from './customDirective/highlight.directive';
-import { ToggleServiceService } from './customServices/toggle-service.service';
 
 
 @NgModule({
@@ -37,8 +36,7 @@ import { ToggleServiceService } from './customServices/toggle-service.service';
     FormsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay()),
-    ToggleServiceService
+    provideClientHydration(withEventReplay())
   ],
   bootstrap: [AppComponent]
 })
