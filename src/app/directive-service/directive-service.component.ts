@@ -2,6 +2,7 @@ import { Component, ElementRef } from '@angular/core';
 import { ToogleService } from '../customServices/toogle.service';
 import { ItemService } from '../customDirective/item.service';
 import { Observable, from } from 'rxjs';
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-directive-service',
@@ -34,6 +35,12 @@ export class DirectiveServiceComponent {
   }
   countervalues:number[] = [2,3,4,5];
   myObservable = from(this.countervalues);
+
+  transformObs = this.myObservable.pipe(
+    map((val) => {
+      return val*2;
+    }
+));
   
   // myObservable = new Observable((observer) => {
   //   let i = 1;
@@ -51,7 +58,7 @@ export class DirectiveServiceComponent {
   // });
 
   getCounter() {
-    this.myObservable.subscribe((val:any)=>{
+    this.transformObs.subscribe((val:any)=>{
       console.log(val);
       this.counters.push(val);
     },
