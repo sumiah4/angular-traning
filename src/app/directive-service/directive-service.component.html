@@ -1,3 +1,15 @@
 <p [appHighlight]="toggleService.toggleStatus">The hightlightened Paragraph to illaustarte the directive and service</p>
 <button (click)="setToggleStatus()">{{toggleService.toggleStatus ? 'Click to set Default' : 'Click to hightlight'}}</button>
 
+<br>
+<br>
+============================================
+<br>
+<input id="itemInput" #item [(ngModel)]="itemAdded" style="margin-right: 10px;">
+<button (click)="addItems(item)">Add items</button>
+<br>
+<p *ngIf="itemService.items.length > 0">Items added are:</p>
+<ul>
+    <li *ngFor="let items of itemService.items">{{items}}
+    </li>
+</ul>
