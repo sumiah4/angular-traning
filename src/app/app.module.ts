@@ -14,7 +14,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HighlighterDirective } from './customDirective/highlighter.directive';
 import { DirectiveServiceComponent } from './directive-service/directive-service.component';
 import { HighlightDirective } from './customDirective/highlight.directive';
-
+import { SenderComponent } from './sender/sender.component';
+import { ReceiverComponent } from './receiver/receiver.component';
+import { MessagingService } from './customServices/messaging.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HighlightDirective } from './customDirective/highlight.directive';
     UserProfileComponent,
     HighlighterDirective,
     DirectiveServiceComponent,
-    HighlightDirective
+    HighlightDirective,
+    SenderComponent,
+    ReceiverComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import { HighlightDirective } from './customDirective/highlight.directive';
     FormsModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    MessagingService
   ],
   bootstrap: [AppComponent]
 })
