@@ -17,7 +17,7 @@ export class SenderComponent {
   sendMessage() {
     if (this.message.trim()) {
       this.messaging.sendMessage(this.message);
-      this.message = ''; // Clear input after sending
+      this.message = '';
     }
   }
 }
