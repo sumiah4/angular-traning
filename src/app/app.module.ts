@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
+import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +17,14 @@ import { HighlightDirective } from './customDirective/highlight.directive';
 import { SenderComponent } from './sender/sender.component';
 import { ReceiverComponent } from './receiver/receiver.component';
 import { MessagingService } from './customServices/messaging.service';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
 
 @NgModule({
   declarations: [
@@ -37,7 +45,8 @@ import { MessagingService } from './customServices/messaging.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     provideClientHydration(withEventReplay()),
