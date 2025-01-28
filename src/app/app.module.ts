@@ -19,11 +19,13 @@ import { ReceiverComponent } from './receiver/receiver.component';
 import { MessagingService } from './customServices/messaging.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { UserProfilesComponent } from './user-profiles/user-profiles.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'user/:id', component: UserProfilesComponent },
 ];
 
 @NgModule({
@@ -40,7 +42,8 @@ const routes: Routes = [
     DirectiveServiceComponent,
     HighlightDirective,
     SenderComponent,
-    ReceiverComponent
+    ReceiverComponent,
+    UserProfilesComponent
   ],
   imports: [
     BrowserModule,
