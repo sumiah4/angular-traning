@@ -20,12 +20,16 @@ import { MessagingService } from './customServices/messaging.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { UserProfilesComponent } from './user-profiles/user-profiles.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent },
   { path: 'user/:id', component: UserProfilesComponent },
+  { path: 'login', component: LoginComponent }, // Public route
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
