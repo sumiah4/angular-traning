@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { DataService } from '../customServices/data.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import { isPlatformBrowser } from '@angular/common';
   // `
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  data: any;
+  constructor(private router: Router, private dataService: DataService) {}
 
   goToProfile() {
     const userId = '101';
@@ -26,6 +28,20 @@ export class HomeComponent {
     localStorage.removeItem('isLoggedIn');
     this.router.navigate(['/login']);
   }
+
+  fetchData() {
+    this.dataService.getData()
+        .subscribe(
+            response => {
+                this.data = response;
+                console.log(response);
+            },
+            error => {
+                console.error('Error fetching data:', error);
+            }
+        );
+}
+
 
 
 }
