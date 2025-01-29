@@ -30,6 +30,7 @@ export class HomeComponent {
   }
 
   fetchData() {
+    alert('lll');
     this.dataService.getData()
         .subscribe(
             response => {

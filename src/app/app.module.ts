@@ -22,6 +22,7 @@ import { AboutComponent } from './about/about.component';
 import { UserProfilesComponent } from './user-profiles/user-profiles.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { HttpClient } from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -47,13 +48,15 @@ const routes: Routes = [
     HighlightDirective,
     SenderComponent,
     ReceiverComponent,
-    UserProfilesComponent
+    UserProfilesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClient
   ],
   providers: [
     provideClientHydration(withEventReplay()),
