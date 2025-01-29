@@ -28,9 +28,11 @@ export class HomeComponent {
     localStorage.removeItem('isLoggedIn');
     this.router.navigate(['/login']);
   }
-
+  ngOnInit() {
+    this.fetchData();
+  }
   fetchData() {
-    alert('lll');
+   // alert('lll');
     this.dataService.getData()
         .subscribe(
             response => {

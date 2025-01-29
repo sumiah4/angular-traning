@@ -23,6 +23,7 @@ import { UserProfilesComponent } from './user-profiles/user-profiles.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { HttpClient } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -56,7 +57,7 @@ const routes: Routes = [
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpClient
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

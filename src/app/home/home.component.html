@@ -1,6 +1,8 @@
 <h2>Welcome to the Home Page!</h2>
 <button (click)="logout()">Log Out</button>
 
-<ul>
-    <li *ngFor="let val of data">{{val}}</li>
-</ul>
+<h3>The details are:</h3>
+<p>{{data.userId}}</p>
+<p>{{data.title}}</p>
+<p>{{data.body}}</p>
+
