@@ -24,6 +24,18 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { HttpClient } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialComponent } from './material/material.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core'; // For native date adapter
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
+
 
 
 const routes: Routes = [
@@ -50,7 +62,8 @@ const routes: Routes = [
     SenderComponent,
     ReceiverComponent,
     UserProfilesComponent,
-    HomeComponent
+    HomeComponent,
+    MaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -58,11 +71,20 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),
-    MessagingService
+    MessagingService,
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

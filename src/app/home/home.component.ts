@@ -21,7 +21,8 @@ export class HomeComponent {
   constructor(private router: Router, private dataService: DataService, private form: FormBuilder) {
     this.submittedForm = this.form.group({
       name: '',
-      email: ''
+      email: '',
+      selectedDate: ['']
     });
 
   }
@@ -55,6 +56,7 @@ export class HomeComponent {
 
   onSubmit() {
       this.dataService.postData(this.submittedForm.value).subscribe(response => {
+        console.log(this.submittedForm.value);
         alert('Form submitted successfully!');
       }, error => {
         console.error('Error:', error);
