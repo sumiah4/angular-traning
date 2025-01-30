@@ -7,10 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
+  private apiUrl = 'https://localhost'; 
+
   //constructor() { }
   constructor(private http: HttpClient) { }
 
     getData(): Observable<any> {
         return this.http.get('https://jsonplaceholder.typicode.com/posts/1');
+    }
+    postData(formData: any): Observable<any> {
+      return this.http.post(this.apiUrl, formData);
     }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { DataService } from '../customServices/data.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,14 @@ import { DataService } from '../customServices/data.service';
 })
 export class HomeComponent {
   data: any;
-  constructor(private router: Router, private dataService: DataService) {}
+  submittedForm: FormGroup;
+  constructor(private router: Router, private dataService: DataService, private form: FormBuilder) {
+    this.submittedForm = this.form.group({
+      name: '',
+      email: ''
+    });
+
+  }
 
   goToProfile() {
     const userId = '101';
@@ -43,7 +51,15 @@ export class HomeComponent {
                 console.error('Error fetching data:', error);
             }
         );
-}
+  }
+
+  onSubmit() {
+      this.dataService.postData(this.submittedForm.value).subscribe(response => {
+        alert('Form submitted successfully!');
+      }, error => {
+        console.error('Error:', error);
+      });
+  }
 
 
 

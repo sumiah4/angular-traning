@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GreetingComponent } from './greeting/greeting.component';
 import { NgclasstrialComponent } from './ngclasstrial/ngclasstrial.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -57,7 +57,8 @@ const routes: Routes = [
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),
